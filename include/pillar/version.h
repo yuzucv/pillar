@@ -1,0 +1,8 @@
+#pragma once
+
+#define YUZU_PILLAR_VER_MAJOR 0
+#define YUZU_PILLAR_VER_MINOR 0
+#define YUZU_PILLAR_VER_PATCH 1
+
+#define YUZU_TO_VERSION(major, minor, patch) (major * 10000 + minor * 100 + patch)
+#define YUZU_VERSION YUZU_TO_VERSION(YUZU_PILLAR_VER_MAJOR, YUZU_PILLAR_VER_MINOR, YUZU_PILLAR_VER_PATCH)
