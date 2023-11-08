@@ -7,7 +7,7 @@ namespace yuzu
 {
 namespace math
 {
-float cosineSimilarity(float* A, float* B, unsigned int len);
+float cosineSimilarity(const float* A, const float* B, unsigned int len);
 
 // Calculate cosine sililarity of vectors.
 template <class T = float>
