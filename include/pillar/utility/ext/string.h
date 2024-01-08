@@ -57,6 +57,24 @@ static std::string join(std::vector<T> str_vector, std::string delim)
                                       { return ss.empty() ? std::to_string(s) : ss + delim + std::to_string(s); });
     return str;
 }
+
+/**
+ * Joins a vector of strings into a single string using a delimiter.
+ *
+ * @param str_vector the vector of strings to be joined
+ * @param delim the delimiter to be used in between the strings
+ *
+ * @return the resulting string after joining the input strings
+ */
+template <>
+inline std::string join<std::string>(std::vector<std::string> str_vector, std::string delim)
+{
+    std::string str = std::accumulate(std::begin(str_vector), std::end(str_vector), std::string(),
+                                      [&delim](const std::string& ss, const std::string& s)
+                                      { return ss.empty() ? s : ss + delim + s; });
+    return str;
+}
+
 /**
  * @brief trim a string from left
  *
